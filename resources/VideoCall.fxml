@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="755.0" prefWidth="687.0" stylesheets="@videocss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.VideoCallController">
+   <children>
+      <Circle fx:id="endcall" fill="#f8f8f6" layoutX="212.0" layoutY="710.0" onMouseClicked="#end_call" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
+      <HBox layoutX="24.0" layoutY="26.0" prefHeight="642.0" prefWidth="639.0" styleClass="videoframe">
+         <children>
+            <ImageView id="videoimage" fx:id="videoframe" fitHeight="639.0" fitWidth="636.0" pickOnBounds="true" preserveRatio="true" styleClass="videoframe" />
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9ba0a4" height="32.0" layoutX="-2.0" layoutY="-32.0" stroke="BLACK" strokeType="INSIDE" width="691.0" />
+      <Button fx:id="share_screen" layoutX="421.0" layoutY="698.0" mnemonicParsing="false" onAction="#sharescreen" text="Button" />
+   </children>
+</AnchorPane>

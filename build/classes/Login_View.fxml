@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.LoginController">
+   <children>
+      <Text id="skype" fill="#56c5f8" layoutX="292.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SKYPE" wrappingWidth="91.7294921875">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="email" layoutX="317.0" layoutY="120.0" prefHeight="25.0" prefWidth="257.0" unFocusColor="#5607cd" />
+      <JFXPasswordField fx:id="password" layoutX="317.0" layoutY="186.0" prefHeight="25.0" prefWidth="257.0" unFocusColor="#4d0fdd" />
+      <JFXButton fx:id="loginbtn" layoutX="512.0" layoutY="257.0" onAction="#loginclicked" style="-fx-border-width: 10; -fx-background-color: black;" text="Login" textFill="#fcf9f9">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="new_acc" fill="#e80b0b" layoutX="298.0" layoutY="350.0" onMouseClicked="#newacc_clicked" strokeType="OUTSIDE" strokeWidth="0.0" text="New User?" underline="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 Jun, 2020, 3:06:45 PM
+    Author     : harshit
+*/
+.videoframe {
+    
+    -fx-border-color: grey ;
+    -fx-border-width: 2 ; 
+    -fx-border-style: segments(10, 10, 10, 10)  line-cap round ;
+
+}
+

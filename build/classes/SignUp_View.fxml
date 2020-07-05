@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="signup_bg" prefHeight="511.0" prefWidth="762.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.SignUpController">
+   <children>
+      <Text fill="#28a8d7" layoutX="355.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skype" wrappingWidth="93.7294921875">
+         <font>
+            <Font name="KacstPen" size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="164.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="86.7294921875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="164.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="62.7294921875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="164.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="165.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="78.7294921875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="164.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Work Place" wrappingWidth="119.7294921875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="name" layoutX="402.0" layoutY="120.0" prefHeight="25.0" prefWidth="294.0" />
+      <JFXTextField fx:id="email" layoutX="402.0" layoutY="170.0" prefHeight="25.0" prefWidth="294.0" />
+      <JFXPasswordField fx:id="password" layoutX="402.0" layoutY="222.0" prefHeight="25.0" prefWidth="294.0" />
+      <JFXTextField fx:id="phone" layoutX="402.0" layoutY="277.0" prefHeight="25.0" prefWidth="294.0" />
+      <JFXTextField fx:id="workplace" layoutX="402.0" layoutY="330.0" prefHeight="25.0" prefWidth="294.0" />
+      <JFXButton fx:id="signup_btn" alignment="CENTER" layoutX="348.0" layoutY="439.0" onAction="#signup" prefHeight="25.0" prefWidth="87.0" ripplerFill="#1d1e1e" text="Register" textFill="#f50808" underline="true">
+         <font>
+            <Font name="Lucida Sans Regular" size="16.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="profilepic" layoutX="402.0" layoutY="390.0" prefHeight="25.0" prefWidth="294.0" style="-fx-border-color: black;" />
+      <Button fx:id="browse" layoutX="165.0" layoutY="390.0" mnemonicParsing="false" onAction="#browse_clicked" prefHeight="27.0" prefWidth="103.0" style="-fx-border-color: black;" text="Choose File" />
+   </children>
+</AnchorPane>

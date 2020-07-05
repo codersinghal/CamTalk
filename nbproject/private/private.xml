@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/ChatHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/OnlineUserQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/videocss.css</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/FileReciever.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/Response.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/SignupHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/AddFriendHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/VideoCallController.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/AddFriendQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/model/Message.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/PeerHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/model/User.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/LogoutHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/GetStatusQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/MessageQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/LoginQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/Test.css</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/GetStatusHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/FriendSuggHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/SignUpController.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/login.css</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/ProfileController.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/video_tools/Utils.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/FriendSuggQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/Start.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/LoginHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/start/ClientHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/FileSender.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/OnlineList.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/SearchUser.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/Dashboard.fxml</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/model/QueryType.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/LoginController.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/LogoutQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/VideoCall.fxml</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/Profilepage.fxml</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/PeerConnect.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/video_tools/FrameController.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/DashBoard_Controller.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/start/Start.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/UserSearchHandler.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/video_tools/MattoByte.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/MessageSendQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/SignUpQuery.java</file>
+        </group>
+    </open-files>
+</project-private>

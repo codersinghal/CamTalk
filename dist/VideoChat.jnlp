@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="VideoChat.jnlp">
+  <information>
+    <title>VideoChat</title>
+    <vendor>harshit</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="VideoChat.jar" size="16371" download="eager" />
+    <jar href="lib/jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="lib/mysql.jar" size="1002812" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="VideoChat" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="mainclient.Start"  name="VideoChat" />
+  <update check="always"/>
+</jnlp>

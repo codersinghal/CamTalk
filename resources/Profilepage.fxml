@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="639.0" prefWidth="582.0" style="-fx-background-color: #E0FCF6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.ProfileController">
+   <children>
+      <Circle fx:id="profilepic" fill="#f8fafc" layoutX="290.0" layoutY="104.0" radius="68.0" stroke="#1b1a1a" strokeType="INSIDE" />
+      <Label fx:id="name_lab" alignment="CENTER" layoutX="252.0" layoutY="186.0" text="Harshit">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="email_lab" alignment="CENTER" layoutX="170.0" layoutY="241.0" opacity="0.6" prefHeight="21.0" prefWidth="292.0" text="harshitsinghal0006@gmail.com">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="268.0" layoutY="288.0" opacity="0.56" text="MNNIT">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="26.0" fitWidth="36.0" layoutX="114.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/home/harshit/Downloads/icons8-new-post-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="114.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/home/harshit/Downloads/icons8-new-company-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="profilephoto" fitHeight="72.0" fitWidth="111.0" layoutX="234.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="status_lab" alignment="CENTER" layoutX="358.0" layoutY="195.0" text="Online" textFill="#0be828">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="friend_btn" layoutX="247.0" layoutY="354.0" mnemonicParsing="false" onAction="#addfriend" style="-fx-background-color: blue;" text="Add Friend" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="videocall_btn" fitHeight="56.0" fitWidth="67.0" layoutX="114.0" layoutY="462.0" onMouseClicked="#videocall_clicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/home/harshit/Downloads/icons8-video-call-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chat_btn" fitHeight="56.0" fitWidth="67.0" layoutX="420.0" layoutY="462.0" onMouseClicked="#chat_clicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/home/harshit/Downloads/icons8-messaging-64.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
