@@ -24,6 +24,8 @@ import java.util.logging.Logger;
 import static javafx.application.ConditionalFeature.FXML;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -81,7 +83,7 @@ public class DashBoard_Controller {
     @FXML
     ImageView searchbtn;
     @FXML
-    ListView searchlist;
+    ListView<User> searchlist;
     @FXML
     JFXListView online;
     @FXML
@@ -127,15 +129,21 @@ public class DashBoard_Controller {
                 }
                 //searchlist.prefHeight(20*users.size());
                 searchlist.getItems().clear();
-                for (User it : users) {
-                    searchlist.getItems().add(it.getName());
-                }
+//                for (User it : users) {
+//                    searchlist.getItems().add(it.getName());
+//                }
+                 ObservableList<User> userObservableList=FXCollections.observableArrayList();
+                 userObservableList.addAll(users);
+                 System.out.println(userObservableList);
+                 searchlist.setItems(userObservableList);
+                 searchlist.setCellFactory(new UserCellFactory());
+                 System.out.println("fucked");
 
             } else {
                 System.out.println("failed");
             }
         } catch (Exception ex) {
-
+           ex.printStackTrace();
         }
 
     }

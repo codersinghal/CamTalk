@@ -24,6 +24,7 @@
             <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/FriendSuggHandler.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/SignUpController.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/resources/login.css</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/UserCell.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/ProfileController.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/video_tools/Utils.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/FriendSuggQuery.java</file>
@@ -46,7 +47,9 @@
             <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/query_handler/UserSearchHandler.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/video_tools/MattoByte.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/MessageSendQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/src/mainclient/controllers/UserCellFactory.java</file>
             <file>file:/home/harshit/Downloads/VideoChat/src/mainserver/clientqueries/SignUpQuery.java</file>
+            <file>file:/home/harshit/Downloads/VideoChat/resources/task_cell.fxml</file>
         </group>
     </open-files>
 </project-private>
