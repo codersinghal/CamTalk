@@ -70,7 +70,7 @@ import mainserver.query_handler.OnlineList;
  * @author harshit
  */
 public class DashBoard_Controller {
-
+    
     static User profileuser, frienduser;
     ArrayList<User> users, friends;
     String path;
@@ -85,7 +85,7 @@ public class DashBoard_Controller {
     @FXML
     ListView<User> searchlist;
     @FXML
-    JFXListView online;
+    JFXListView<User> online;
     @FXML
     ImageView refresh;
     @FXML
@@ -100,8 +100,11 @@ public class DashBoard_Controller {
     TextField chatfield;
     @FXML
     ScrollPane scp;
-    @FXML Label name_label;
-    @FXML JFXListView friendsuglist;
+    @FXML
+    Label name_label;
+    @FXML
+    JFXListView<User> friendsuglist;
+
     @FXML
     public void initialize() throws IOException {
         String cwd = System.getProperty("user.dir");
@@ -111,9 +114,9 @@ public class DashBoard_Controller {
         name_label.setText(Start.user.getName());
         addEffects();
         loadfriendsug();
-
+        
     }
-
+    
     public void search_clicked() {
         String searchedname = searchbox.getText();
         SearchUser obj = new SearchUser(searchedname);
@@ -132,22 +135,22 @@ public class DashBoard_Controller {
 //                for (User it : users) {
 //                    searchlist.getItems().add(it.getName());
 //                }
-                 ObservableList<User> userObservableList=FXCollections.observableArrayList();
-                 userObservableList.addAll(users);
-                 System.out.println(userObservableList);
-                 searchlist.setItems(userObservableList);
-                 searchlist.setCellFactory(new UserCellFactory());
-                 System.out.println("fucked");
-
+                ObservableList<User> userObservableList = FXCollections.observableArrayList();
+                userObservableList.addAll(users);
+                System.out.println(userObservableList);
+                searchlist.setItems(userObservableList);
+                searchlist.setCellFactory(new UserCellFactory());
+                System.out.println("fucked");
+                
             } else {
                 System.out.println("failed");
             }
         } catch (Exception ex) {
-           ex.printStackTrace();
+            ex.printStackTrace();
         }
-
+        
     }
-
+    
     public void selectuser() {
         System.out.println(searchlist.getSelectionModel().getSelectedIndex());
         int index = searchlist.getSelectionModel().getSelectedIndex();
@@ -166,9 +169,9 @@ public class DashBoard_Controller {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
     }
-
+    
     public void refresh_clicked() {
         OnlineUserQuery obj = new OnlineUserQuery(Start.user.getUserid());
         try {
@@ -190,15 +193,19 @@ public class DashBoard_Controller {
                     Response rs = (Response) Start.ois.readObject();
                     it.setStatus(rs.getObject().toString());
                     // online.getItems().add(TextBuilder.create().text("BOLD").style("-fx-font-weight:bold;").build());
-                    online.getItems().add(it.getName() + "         " + it.getStatus());
+                    //online.getItems().add(it.getName() + "         " + it.getStatus());
                     System.out.println(it.getName() + " " + it.getStatus());
                 }
+                ObservableList<User> userObservableList = FXCollections.observableArrayList();
+                userObservableList.addAll(friends);
+                online.setItems(userObservableList);
+                online.setCellFactory(new UserCellFactory());
             }
         } catch (Exception ex) {
-
+            
         }
     }
-
+    
     public void logout_clicked() {
         LogoutQuery obj = new LogoutQuery(Start.user.getUserid());
         try {
@@ -209,22 +216,22 @@ public class DashBoard_Controller {
                 Stage primaryStage = (Stage) logout_btn.getScene().getWindow();
                 Parent root = null;
                 try {
-
+                    
                     root = FXMLLoader.load(getClass().getResource("/Login_View.fxml"));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+                
                 primaryStage.setScene(new Scene(root, 700, 420));
                 primaryStage.show();
             } else {
                 System.out.println("failed logout");
             }
         } catch (Exception ex) {
-
+            
         }
     }
-
+    
     public void chat_friend() {
         scp.setContent(vbox);
         List<Separator> sep = new ArrayList<>();
@@ -248,51 +255,50 @@ public class DashBoard_Controller {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true)
-                {
-                Platform.runLater(() -> vbox.getChildren().clear());
-                Platform.runLater(() -> vbox.getChildren().clear());
-                chatlist.clear();
-                sep.clear();
-                try {
-                    BufferedReader reader = new BufferedReader(new FileReader(path));
+                while (true) {
+                    Platform.runLater(() -> vbox.getChildren().clear());
+                    Platform.runLater(() -> vbox.getChildren().clear());
+                    chatlist.clear();
+                    sep.clear();
                     try {
-                        String mess;
-                        int i = 0;
-                        while ((mess = reader.readLine()) != null) {
-                            System.out.println(mess);
-                            String[] s = mess.split(" ", 2);
-                            if (Start.user.getName().equals(s[0])) {
-                                chatlist.add(new Label(s[1]));
-                                chatlist.get(i).getStyleClass().add("mess");
-                                chatlist.get(i).setAlignment(Pos.CENTER_RIGHT);
-                            } else {
-                                chatlist.add(new Label(s[1]));
-                                chatlist.get(i).getStyleClass().add("mess");
-                                chatlist.get(i).setAlignment(Pos.CENTER_LEFT);
-                            }
-                            sep.add(new Separator());
-                            sep.get(i).getStyleClass().add("sepa");
-                            final Label l = chatlist.get(i);
-                            final Separator sp = sep.get(i);
-                            Platform.runLater(() -> vbox.getChildren().add(l));
-                            Platform.runLater(() -> vbox.getChildren().add(sp));
-
-                            i++;
-                        }
+                        BufferedReader reader = new BufferedReader(new FileReader(path));
                         try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException ex) {
-                            
+                            String mess;
+                            int i = 0;
+                            while ((mess = reader.readLine()) != null) {
+                                System.out.println(mess);
+                                String[] s = mess.split(" ", 2);
+                                if (Start.user.getName().equals(s[0])) {
+                                    chatlist.add(new Label(s[1]));
+                                    chatlist.get(i).getStyleClass().add("mess");
+                                    chatlist.get(i).setAlignment(Pos.CENTER_RIGHT);
+                                } else {
+                                    chatlist.add(new Label(s[1]));
+                                    chatlist.get(i).getStyleClass().add("mess");
+                                    chatlist.get(i).setAlignment(Pos.CENTER_LEFT);
+                                }
+                                sep.add(new Separator());
+                                sep.get(i).getStyleClass().add("sepa");
+                                final Label l = chatlist.get(i);
+                                final Separator sp = sep.get(i);
+                                Platform.runLater(() -> vbox.getChildren().add(l));
+                                Platform.runLater(() -> vbox.getChildren().add(sp));
+                                
+                                i++;
+                            }
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException ex) {
+                                
+                            }
+                        } catch (IOException ex) {
+                            Logger.getLogger(DashBoard_Controller.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                    } catch (IOException ex) {
-                        Logger.getLogger(DashBoard_Controller.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (FileNotFoundException ex) {
+                        ex.printStackTrace();
                     }
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
+                    
                 }
-
-            }
             }
         }).start();
 //        for (int i = 0; i < 16; i++) {
@@ -311,7 +317,7 @@ public class DashBoard_Controller {
 //        }
 
     }
-
+    
     public void send() {
         System.out.println("send clicked");
         try {
@@ -325,69 +331,69 @@ public class DashBoard_Controller {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
+        
     }
-    public void addEffects()
-    {
+
+    public void addEffects() {
         ColorAdjust colorAdjust = new ColorAdjust();
         colorAdjust.setBrightness(-0.5);
         profileimg.addEventFilter(MouseEvent.MOUSE_ENTERED, e -> {
-
+            
             profileimg.setEffect(colorAdjust);
-
+            
         });
         profileimg.addEventFilter(MouseEvent.MOUSE_EXITED, e -> {
             profileimg.setEffect(null);
         });
         searchbtn.addEventFilter(MouseEvent.MOUSE_ENTERED, e -> {
-
+            
             searchbtn.setEffect(colorAdjust);
-
+            
         });
         searchbtn.addEventFilter(MouseEvent.MOUSE_EXITED, e -> {
             searchbtn.setEffect(null);
         });
         refresh.addEventFilter(MouseEvent.MOUSE_ENTERED, e -> {
-
+            
             refresh.setEffect(colorAdjust);
-
+            
         });
         refresh.addEventFilter(MouseEvent.MOUSE_EXITED, e -> {
             refresh.setEffect(null);
         });
         logout_btn.addEventFilter(MouseEvent.MOUSE_ENTERED, e -> {
-
+            
             logout_btn.setEffect(colorAdjust);
-
+            
         });
         logout_btn.addEventFilter(MouseEvent.MOUSE_EXITED, e -> {
             logout_btn.setEffect(null);
         });
         send_btn.addEventFilter(MouseEvent.MOUSE_ENTERED, e -> {
-
+            
             send_btn.setEffect(colorAdjust);
-
+            
         });
         send_btn.addEventFilter(MouseEvent.MOUSE_EXITED, e -> {
             send_btn.setEffect(null);
         });
     }
-    void loadfriendsug()
-    {   try {
-        FriendSuggQuery fsq=new FriendSuggQuery(Start.user.getUserid());
-        Start.oos.writeObject(fsq);
-        Start.oos.flush();
-        Response res=(Response) Start.ois.readObject();
-        if(res.getCode().equals("Success"))
-        {
-        ArrayList<User> friendsug=(ArrayList<User>) res.getObject();
-        for(User u:friendsug)
-        { friendsuglist.getItems().add("");
-         friendsuglist.getItems().add(u.getName());
-        }
-        }
-        else
-            System.out.println("failed here");
+
+    void loadfriendsug() {
+        try {
+            FriendSuggQuery fsq = new FriendSuggQuery(Start.user.getUserid());
+            Start.oos.writeObject(fsq);
+            Start.oos.flush();
+            Response res = (Response) Start.ois.readObject();
+            if (res.getCode().equals("Success")) {
+                ArrayList<User> friendsug = (ArrayList<User>) res.getObject();
+                ObservableList<User> userObservableList = FXCollections.observableArrayList();
+                userObservableList.addAll(friendsug);
+                this.friendsuglist.setItems(userObservableList);
+                this.friendsuglist.setCellFactory(new UserCellFactory());
+            } else {
+                System.out.println("failed here");
+            }
         } catch (Exception ex) {
             
         }

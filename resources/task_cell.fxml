@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane fx:id="anchor" prefHeight="58.0" prefWidth="247.0" style="-fx-background-color: #F4C2FB; -fx-border-color: white; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchor" prefHeight="58.0" prefWidth="225.0" style="-fx-background-color: #F4C2FB; -fx-border-color: white; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Circle fx:id="pp" fill="#fbfcf8" layoutX="31.0" layoutY="30.0" radius="23.0" stroke="#a898a3" strokeType="INSIDE" />
       <Label fx:id="name" alignment="CENTER" layoutX="63.0" layoutY="19.0" prefHeight="15.0" prefWidth="109.0" text="Harshit">
@@ -17,7 +16,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="work" layoutX="197.0" layoutY="37.0" text="MNNIT" textFill="#eb0707">
+      <Label fx:id="work" layoutX="118.0" layoutY="40.0" text="MNNIT" textFill="#eb0707">
          <font>
             <Font size="11.0" />
          </font>
