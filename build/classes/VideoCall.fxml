@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="755.0" prefWidth="687.0" stylesheets="@videocss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.VideoCallController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="757.0" prefWidth="689.0" stylesheets="@videocss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.VideoCallController">
    <children>
       <Circle fx:id="endcall" fill="#f8f8f6" layoutX="212.0" layoutY="710.0" onMouseClicked="#end_call" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
       <HBox layoutX="24.0" layoutY="26.0" prefHeight="642.0" prefWidth="639.0" styleClass="videoframe">
@@ -18,6 +18,10 @@
          </children>
       </HBox>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9ba0a4" height="32.0" layoutX="-2.0" layoutY="-32.0" stroke="BLACK" strokeType="INSIDE" width="691.0" />
-      <Button fx:id="share_screen" layoutX="421.0" layoutY="698.0" mnemonicParsing="false" onAction="#sharescreen" text="Button" />
+      <ImageView fx:id="sharescreen" fitHeight="54.0" fitWidth="49.0" layoutX="435.0" layoutY="686.0" onMouseClicked="#share_screen" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/home/harshit/Downloads/icons8-chromecast-cast-button-48.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

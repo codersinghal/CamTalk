@@ -7,6 +7,8 @@ package mainclient.controllers;
 
 //import java.awt.Image;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXSnackbar;
+import com.jfoenix.controls.JFXSnackbar.SnackbarEvent;
 import com.jfoenix.controls.JFXTextField;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -49,6 +51,7 @@ import javax.imageio.ImageIO;
 import mainclient.Start;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -72,8 +75,11 @@ import mainserver.query_handler.OnlineList;
 public class DashBoard_Controller {
     
     static User profileuser, frienduser;
+    boolean searchflag=false;
     ArrayList<User> users, friends;
     String path;
+    @FXML 
+    AnchorPane mainframe;
     @FXML
     ImageView profileimg;
     @FXML
@@ -104,7 +110,7 @@ public class DashBoard_Controller {
     Label name_label;
     @FXML
     JFXListView<User> friendsuglist;
-
+    
     @FXML
     public void initialize() throws IOException {
         String cwd = System.getProperty("user.dir");
@@ -115,6 +121,7 @@ public class DashBoard_Controller {
         addEffects();
         loadfriendsug();
         
+        //snack.fireEvent(new SnackbarEvent("hello"));
     }
     
     public void search_clicked() {
@@ -191,10 +198,11 @@ public class DashBoard_Controller {
                     Start.oos.writeObject(gsq);
                     Start.oos.flush();
                     Response rs = (Response) Start.ois.readObject();
+                    if(rs.getObject()!=null)
                     it.setStatus(rs.getObject().toString());
                     // online.getItems().add(TextBuilder.create().text("BOLD").style("-fx-font-weight:bold;").build());
                     //online.getItems().add(it.getName() + "         " + it.getStatus());
-                    System.out.println(it.getName() + " " + it.getStatus());
+                    //System.out.println(it.getName() + " " + it.getStatus());
                 }
                 ObservableList<User> userObservableList = FXCollections.observableArrayList();
                 userObservableList.addAll(friends);
@@ -202,7 +210,7 @@ public class DashBoard_Controller {
                 online.setCellFactory(new UserCellFactory());
             }
         } catch (Exception ex) {
-            
+            ex.printStackTrace();
         }
     }
     
@@ -390,12 +398,18 @@ public class DashBoard_Controller {
                 ObservableList<User> userObservableList = FXCollections.observableArrayList();
                 userObservableList.addAll(friendsug);
                 this.friendsuglist.setItems(userObservableList);
-                this.friendsuglist.setCellFactory(new UserCellFactory());
+                this.friendsuglist.setCellFactory(new FriendSugFactory());
             } else {
                 System.out.println("failed here");
             }
         } catch (Exception ex) {
             
         }
+    }
+    @FXML
+   public void hide()
+    {
+        searchflag=false;
+        this.searchlist.setVisible(searchflag);
     }
 }

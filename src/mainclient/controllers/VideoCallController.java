@@ -49,6 +49,7 @@ public class VideoCallController {
 
     @FXML
     ImageView videoframe;
+    @FXML ImageView share_screen;
     Socket mysocket;
     OutputStream os;
     InputStream is;
@@ -57,7 +58,6 @@ public class VideoCallController {
     FrameController fc;
     @FXML
     Circle endcall;
-    @FXML Button share_screen;
     @FXML
     void initialize() {
         System.out.println(Start.user.getName());

@@ -14,7 +14,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="818.0" prefWidth="1082.0" style="-fx-background-color: wte;" stylesheets="@Test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.DashBoard_Controller">
+<AnchorPane id="AnchorPane" fx:id="mainframe" onMouseClicked="#hide" prefHeight="818.0" prefWidth="1082.0" style="-fx-background-color: wte;" stylesheets="@Test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainclient.controllers.DashBoard_Controller">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62676b" height="40.0" stroke="#f2eeee" strokeLineCap="ROUND" strokeType="INSIDE" width="1089.0" />
       <Label layoutX="14.0" layoutY="8.0" prefHeight="24.0" prefWidth="162.0" text="DASHBOARD" textFill="#f5e4e4">
@@ -53,7 +53,7 @@
             <Image url="file:/home/harshit/Downloads/icons8-shutdown-48.png" />
          </image>
       </ImageView>
-      <ListView fx:id="searchlist" layoutX="678.0" layoutY="108.0" onMouseClicked="#selectuser" prefHeight="233.0" prefWidth="266.0" style="-fx-fixed-cell-size: 66;" />
+      <ListView fx:id="searchlist" layoutX="678.0" layoutY="108.0" onMouseClicked="#selectuser" prefHeight="233.0" prefWidth="266.0" style="-fx-fixed-cell-size: 66;" visible="false" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcfdff" height="50.0" layoutX="810.0" layoutY="774.0" stroke="#cdc2c2" strokeType="INSIDE" width="279.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f72a1d" height="50.0" layoutX="779.0" layoutY="774.0" stroke="#f2f2f2" strokeType="INSIDE" width="222.0" />
       <Label alignment="CENTER" layoutX="824.0" layoutY="785.0" prefHeight="15.0" prefWidth="133.0" text="Friends" textFill="#fcf9f9">
@@ -100,7 +100,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <JFXListView fx:id="friendsuglist" fixedCellSize="-5.0" layoutX="12.0" layoutY="356.0" prefHeight="423.0" prefWidth="211.0" style="-fx-background-color: #A2B0F8; -fx-border-color: white; -fx-border-width: 3; -fx-border-radius: 5 5 5 5;" verticalGap="2.0" />
+      <JFXListView fx:id="friendsuglist" fixedCellSize="-5.0" layoutX="12.0" layoutY="356.0" prefHeight="423.0" prefWidth="209.0" style="-fx-background-color: #A2B0F8; -fx-border-width: 3; -fx-border-radius: 5 5 5 5; -jfx-vertical-gap: 10; -fx-background-radius: 15;" />
       <Label layoutX="51.0" layoutY="331.0" text="Friend Suggestions" textFill="#3406da">
          <font>
             <Font name="Laksaman Bold" size="15.0" />

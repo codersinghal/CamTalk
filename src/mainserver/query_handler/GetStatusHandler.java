@@ -40,7 +40,7 @@ public class GetStatusHandler {
             }
             return new Response(status,"Success");
         } catch (SQLException ex) {
-        
+        ex.printStackTrace();
         }
         return new Response(null,"Failed");
     }

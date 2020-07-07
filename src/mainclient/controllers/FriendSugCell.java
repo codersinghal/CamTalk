@@ -8,12 +8,11 @@ package mainclient.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Region;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import mainserver.model.User;
@@ -22,21 +21,21 @@ import mainserver.model.User;
  *
  * @author harshit
  */
-public class UserCell extends ListCell<User>{
+public class FriendSugCell extends ListCell<User> {
     @FXML
     Circle pp;
     @FXML
     Label name,work;
     @FXML AnchorPane anchor;
     @FXML Circle online_status;
-    public UserCell() {
+    public FriendSugCell() {
         loadFXML();
     }
 
     private void loadFXML() {
         try {
             System.out.println("loading");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/task_cell.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/friendsug.fxml"));
             loader.setController(this);
            // loader.setRoot(this);
             loader.load();
@@ -58,8 +57,6 @@ public class UserCell extends ListCell<User>{
         {
         System.out.println(item);
        // setPrefHeight(70.0);
-       if(("online").equals(item.getStatus()))
-           online_status.setVisible(true);
         pp.setFill(new ImagePattern(new Image("/profile.jpeg") {
         }));
         name.setText(item.getName());
@@ -69,5 +66,4 @@ public class UserCell extends ListCell<User>{
             setGraphic(anchor);
     }
     }
-    
 }

@@ -9,20 +9,15 @@ package mainserver.model;
  *
  * @author harshit
  */
-public enum QueryType {
-    LOGIN,
-    SIGN_UP,
-    LOGOUT,
-    SEARCH_USER,
-    ONLINE_USER,
-    GET_STATUS,
-    ADD_FRIEND,
-    FriendSug,
-    NOTIFICATION,
-    MESSAGE_SEND;
-     QueryType()
+public enum NotifyType {
+    MESSAGE,
+    VIDEOCALL;
+   
+
+     NotifyType()
     {
-       this.toString();
+      this.toString();
     }
-    
+
 }
+ 

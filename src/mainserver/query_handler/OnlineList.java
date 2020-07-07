@@ -50,9 +50,10 @@ public class OnlineList implements Serializable{
             }
                 onlinelist.add(user);
             }
+            
             return new Response(onlinelist,"Success");
         } catch (SQLException ex) {
-        
+           ex.printStackTrace();
         }
         return new Response(null,"failed");
     }

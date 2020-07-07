@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="204.0" style="-fx-background-radius: 40;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Circle fx:id="pp" fill="DODGERBLUE" layoutX="34.0" layoutY="33.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="name" layoutX="75.0" layoutY="22.0" text="harshit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="work" layoutX="152.0" layoutY="44.0" text="MNNIT" textFill="#ee2409" />
+   </children>
+</AnchorPane>
