@@ -53,7 +53,7 @@ public class LoginController {
     public void loginclicked(ActionEvent avt) {
         try {
 
-            LoginQuery lq = new LoginQuery(email.getText(), password.getText());
+            LoginQuery lq = new LoginQuery(email.getText(), EncryptPass.encrypt(EncryptPass.getSHA(password.getText())));
 
             if (Start.servercon == null) {
                 Start.servercon = new Socket("localhost", 3128);
