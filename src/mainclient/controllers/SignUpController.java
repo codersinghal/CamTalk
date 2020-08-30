@@ -52,7 +52,7 @@ public class SignUpController {
        user.setPhone(phone.getText());
        user.setWorkplace(workplace.getText());
        user.setUserid(UUID.randomUUID().toString());
-       SignUpQuery sq=new SignUpQuery(password.getText(),user);
+       SignUpQuery sq=new SignUpQuery(EncryptPass.encrypt(EncryptPass.getSHA(password.getText())),user);
        if(Start.servercon==null)
        {   try {
            Start.servercon=new Socket("localhost",3128);
